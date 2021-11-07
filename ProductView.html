@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product View</title>
+    
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> <!-- Latest
+        compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> </script> <!-- The following
+        scripts are added to make the sliding possible in carousal -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
+</head>
+
+<body>
+    <header style="top: 0px; background-color: white;">
+        <div class="header" id="myHeader">
+            <div class="header-top">
+                <div class="container-fluid top-bg" id="header-1" aria-labelledby="header-1">
+                    <div class="row d-flex justify-content-between align-items-center "
+                        style="padding-top: 5px;padding-bottom: 5px;">
+                        <div class="header-info-left d-flex">
+                            <span class="social-logo">
+                                <a href="#"><img src="images/facebook-logo.png" alt="facebook logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo">
+                                <a href="#"><img src="images/youtube-logotype.png" alt="youtube logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo" style="padding-right: 80px;">
+                                <a href="#"><img src="images/twitter-social-logotype.png" alt="twitter logo"
+                                        height="30px" width="30px"></a>
+                            </span>
+
+                            <span class="input">
+                                <input type="text" class="search" placeholder="Search Products & Brands">
+
+                                <button class="btn-search" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+
+                        </div>
+
+                        <div class="header-info-right">
+                            <!-- start of hamburger the list collapses when opend in small devices -->
+                            <!-- nav tab is used to create the hamburger structure and nav-item and collapse class is used -->
+                            <ul style="padding-right: 10px;">
+                                <li>
+                                    <img src="images/phone-with-wire.png" alt="phone" height="30px" width="30px">
+                                    <a href="#" aria-label="contact info"><span id="phone-no">+91 8861873442</span></a>
+                                </li>
+                                <li class="nav-item" aria-details="account">
+                                    <a class="nav-link" href="#" role="link">Sell on Company</a>
+                                </li>
+                                <li class="nav-item" aria-details="wishlist1">
+                                    <a class="nav-link" href="#" role="link">Download App</a>
+
+                                </li>
+                                <li>
+                                    <form action="#" style="padding-left: 20px;" role="presentation">
+                                        <img id="country-logo" src="images/india.png" alt="flag" height="25px"
+                                            width="25px">
+                                        <select name="select" id="select1" onchange=showChange()>
+                                            <option value="INDIA">INDIA</option>
+                                            <option value="USA">USA</option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="CANADA">CAN</option>
+                                        </select>
+                                    </form>
+                                </li>
+                            </ul>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="header-bottom" id="header-sticky" aria-labelledby="header-2"
+                style="background-color: white;">
+
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1" id="logo">
+                            <a href="index.html" aria-label="Logo of Website"><img src="images/logo.png"
+                                    alt="logo"></a>
+                        </div>
+                        <div class="col-xl-6 col-lg-8 col-md-7  col-sm-3">
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav role="menubar">
+                                    <ul id="navigation">
+                                        <!-- <div class="dropdown">
+                                            <li class="dropbtn">Dropdown</li>
+                                            <div class="dropdown-content">
+                                              <a href="#">Link 1</a>
+                                              <a href="#">Link 2</a>
+                                              <a href="#">Link 3</a>
+                                            </div>
+                                          </div> -->
+                                        <li role="menuitem"><a href="index.html">Home</a></li>
+                                        
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            <li role="menuitem" class="dropdown dropbtn">Categories</li>
+                                                <div class="dropdown-content">
+                                                    <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                    <a href="">Men</a>
+                                                    <a href="">Women</a>
+                                                    <a href="">Children</a>
+                                                    <a href="">Ethnic</a>
+                                                    <a href="">Winter</a>
+                                                </div>
+                                            
+                                        </div>
+                                   
+                                       
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            
+                                        
+                                        <li role="menuitem" class=" dropbtn">Latest</li>
+                                            <div class="dropdown-content">
+                                                <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                <a href="Product-list.html">Product List</a>
+                                                <a href="ProductView.html">Product details</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <li role="menuitem"><a href="FAQ.html">FAQ</a></li>
+                                        <!-- <li role="menuitem"><a href="Profile.html">Profile</a> -->
+                                        </li>
+                                        <li role="menuitem"><a href="">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-12" id="logo-left">
+                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                <div class="dropdown">
+                                    <li class="dropbtn"><img src="images/user (1).png" height="45px" width="50px"></li>
+                                   
+                                    <div class="dropdown-content">
+                                        <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                        <a href="Profile.html">Profile</a>
+                                      <a href="My-order.html">My Orders</a>
+                                      <a href="track-order.html">Track Orders</a>
+                                      <a href="ReturnOrder.html">Returns</a>
+
+                                      <a href="Edit-profile.html">Edit-profile</a>
+                                      <a href="thankyou.html">LogOut</a>
+
+                                    </div>
+                                  </div>
+
+                                <li><a href="WishList.html"><i class="far fa-heart"></i></a></li>
+                                <li><a href="Cart-Page.html"><i class="fas fa-shopping-cart"></i></a></i></li>
+                                <!-- contrast color -->
+                                <li><a href="login.html"><button class="btn header-btn" data-toggle="modal" data-target="#signin"
+                                        aria-label="Sign In" style="color: #552A1B;">Sign in</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+
+    </header>
+    <main>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Appliences</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><b>Product</b></li>
+
+            </ol>
+        </nav>
+        <div class="container">
+            <div class="row" id="product-view-details">
+                     
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="product-view-details">
+                <!-- <div class="col-xl-1 col-lg-1 col-md-0 col-sm-0">
+                    <div class="row" style="padding-bottom: 10px;padding-left: 20px;">
+                        <img src="images/product3.png" alt="product" height="80px" width="60px"
+                            style="border: 1px solid #dddddd;">
+                    </div>
+                    <div class="row" style="padding-bottom: 10px;padding-left: 20px;">
+                        <img src="images/product3.png" alt="product" height="80px" width="60px"
+                            style="border: 1px solid #dddddd;">
+                    </div>
+                    <div class="row" style="padding-bottom: 10px;padding-left: 20px;">
+                        <img src="images/product3.png" alt="product" height="80px" width="60px"
+                            style="border: 1px solid #dddddd;">
+                    </div>
+                    <div class="row" style="padding-bottom: 10px;padding-left: 20px;">
+                        <img src="images/product3.png" alt="product" height="80px" width="60px"
+                            style="border: 1px solid #dddddd;">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
+                    <img src="images/product3.png" alt="product" height="450px" width="400px"
+                        style="border: 1px solid #dddddd;">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <div class="row">
+                        <h5 style="font-family: poppins,sans-serif;font-weight: 600;">Yellow Nylon Sweatshirt </h5>
+                    </div>
+                    <div class="row">
+                        <div class="col product-rating" style="padding-left: 0px;">
+                            <a href="#" onclick="setTimeout(function(){
+                                window.location.hash = 'review';
+                            }, 300);">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star low-star"></i>
+                                <i class="far fa-star low-star"></i>
+                            </a>
+                            <span class="rating">39,112 rating</span><span class="bar">&nbsp;|</span>
+                            <span class="rating">1000+ answered questions</span>
+
+
+                        </div>
+
+
+                    </div>
+                  
+                    <div class="row" style="padding-bottom: 20px;padding-top: 8px;">
+                        <span style="font-weight: 700;">Rs 1099 &nbsp;</span>
+                        <span style="text-decoration: line-through;color: #a6a9b6;">Rs 2748</span>
+                        <span style="color: #f8880f; font-weight:700;"> &nbsp; (60% OFF)</span>
+                    </div>
+                    <div class="row">
+                        <h6 style="font-family: poppins,sans-serif; font-weight: 600;">Short Description</h6>
+                        <P style="font-size: 13px;color: #a6a9b6;font-weight: 500;text-align: justify;">
+                            Yellow and Grey casual sweatshirt,has a round collar,long sleeves,button placket,curved hem
+                            and 1 patch pocket
+
+                            Yellow and Grey casual sweatshirt,has a round collar,long sleeves,button placket,curved hem
+                            and 1 patch pocket
+                        </P>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div style="font-size: 16px;font-weight: 600;padding-bottom: 5px;">Select Size</div>
+                            <span>
+                                <button class="sizing"><span style="font-size: 12px;">39</span></button>&nbsp;
+                                <button class="sizing"><span style="font-size: 12px;">40</span></button>&nbsp;
+                                <button class="sizing"><span style="font-size: 12px;">42</span></button>&nbsp;
+                                <button class="sizing"><span style="font-size: 12px;">44</span></button>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div style="font-size: 16px;font-weight: 600;padding-bottom: 8px;">QTY</div>
+                            <div class="row" style="width: 70%;">
+                                <div class="col-3" style="border: 1px solid;">
+                                    <button class="qty" onclick="increment()">+</button>
+                                </div>
+                                <div class="col-6" style="border: 1px solid; padding-left: 35px; ">
+
+                                    <input style="width: 50px; ;" class="qty" id=demoInput type=number min=0 max=100
+                                        placeholder=0>
+                                </div>
+                                <div class="col-3" style="border: 1px solid;">
+                                    <button class="qty" onclick="decrement()">-</button>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 20px;">
+                        <div class="col"><button class="btn" style="border-radius: 0px;">ADD TO CART</button></div>
+                        <div class="col"><button class="btn" style="border-radius: 0px;">BUY NOW</button></div>
+                        <div class="col"><img src="images/wishlist.png" height="70px" width="70px"></div>
+                    </div>
+                    <div class="row" style="padding-top: 10px;padding-bottom: 10px;">
+                        <span style="padding-top: 14px;font-size: 14px;font-weight: 600;">SHARE THIS</span>
+                        <span style="padding-left:10px;">
+                            <img src="images/facebook-logo.png" alt="" height="40px" width="40px">
+                            <img src="images/youtube-logotype.png" alt="" height="40px" width="40px">
+                            <img src="images/twitter-social-logotype.png" alt="" height="40px" width="40px">
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/truck.png" alt="" height="40px" width="50px">
+                            <span style="font-size: 14px;font-weight: 600;padding-left: 10px;">Delivery</span>
+                        </div>
+                        <div class="col">
+                            <img src="images/online-support (1).png" alt="" height="40px" width="50px">
+                            <span style="font-size: 14px;font-weight: 600;padding-left: 10px;">Online Support
+                                24/7</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <hr>
+        <div class="container-fluid">
+
+            <div class="row">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-discription-tab" data-toggle="pill"
+                            href="#pills-description" role="tab" aria-controls="pills-description"
+                            aria-selected="true">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-size-tab" data-toggle="pill" href="#pills-size" role="tab"
+                            aria-controls="pills-size" aria-selected="false">Sizing Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-tag-tab" data-toggle="pill" href="#pills-tag" role="tab"
+                            aria-controls="pills-tag" aria-selected="false">Assigned Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-custom-tab" data-toggle="pill" href="#pills-custom" role="tab"
+                            aria-controls="pills-custom" aria-selected="false">Many Custom Tabs</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="row">
+
+                <!-- </div> -->
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                        aria-labelledby="pills-description-tab">
+                        <h5 style="font-family: poppins,sans-serif; font-weight: 600;">Yellow Sweatshirt Details</h5>
+                        <p style="font-size: 13px;font-family: poppins,sans-serif;">
+                            The world's oldest preserved garment, discovered by Flinders Petrie, is a "highly
+                            sophisticated"
+                            linen shirt from a First Dynasty Egyptian tomb at Tarkan, dated to c. 3000 BC: "the
+                            shoulders and
+                            sleeves have been finely pleated to give form-fitting trimness while allowing the wearer
+                            room to
+                            move. The small fringe formed during weaving along one edge of the cloth has been placed by
+                            the
+                            designer to decorate the neck opening and side seam."[1]
+
+                            The shirt was an item of clothing that only men could wear as underwear, until the twentieth
+                            century.[2] Although the women's chemise was a closely related garment to the men's, it is
+                            the men's
+                            garment that became the modern shirt.[3] In the Middle Ages, it was a plain, undyed garment
+                            worn
+                            next to the skin and under regular garments. In medieval artworks, the shirt is only visible
+                            (uncovered) on humble characters, such as shepherds, prisoners, and penitents.[4] In the
+                            seventeenth
+                            century, men's shirts were allowed to show, with much the same erotic import as visible
+                            underwear
+                            today.[5] In the eighteenth century, instead of underpants, men "relied on the long tails of
+                            shirts
+                            ... to serve the function of drawers.[6] Eighteenth-century costume historian Joseph Strutt
+                            believed
+                            that men who did not wear shirts to bed were indecent.[7] Even as late as 1879, a visible
+                            shirt with
+                            nothing over it was considered improper.[2]
+
+
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-size" role="tabpanel" aria-labelledby="pills-size-tab">
+                        <img src="images/size-guide.jpg" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        ...</div>
+                    <div class="tab-pane fade" id="pills-custom" role="tabpanel" aria-labelledby="pills-custom">...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row" id="review">
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                    <h4 style="font-family: poppins,sans-serif;">Customer Reviews</h4>
+                    <div class="product-caption">
+                        <div class="product-rating">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star low-star"></i>
+                            <i class="far fa-star low-star"></i>
+                            <span style="font-weight: 600;font-size: 14px;">&nbsp; 3 out of 5 stars</span>
+                        </div>
+                    </div>
+
+                    <div class="row" style="font-size: 15px;padding-bottom: 10px;font-weight: 500;">3 Customer ratings
+                    </div>
+
+                    <div class="row align-items-center">
+                        <span style="font-size: 14px;color:#6495ED;font-weight: 600;">5 Star&nbsp;</span>
+
+                        <div class="progress"
+                            style="width: 50%;height: 13px; background-color: #dddddd;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width: 37%;border-radius: 0px;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            </div>
+                        </div>
+
+                        <span style="font-size: 14px;color:#6495ED;font-weight: 600;">&nbsp;37%</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <span style="font-size: 14px;">4 Star&nbsp;</span>
+
+                        <div class="progress"
+                            style="width: 50%;height: 13px; background-color: #dddddd;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="border-radius: 0px;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);"></div>
+                        </div>
+
+                        <span style="font-size: 14px;">&nbsp;0%</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <span style="font-size: 14px;">3 Star&nbsp;</span>
+
+                        <div class="progress"
+                            style="width: 50%;height: 13px; background-color: #dddddd;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="border-radius: 0px;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);"></div>
+                        </div>
+
+                        <span style="font-size: 14px;">&nbsp;0%</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <span style="font-size: 14px;">2 Star&nbsp;</span>
+
+                        <div class="progress"
+                            style="width: 50%;height: 13px; background-color: #dddddd;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="border-radius: 0px;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);"></div>
+                        </div>
+
+                        <span style="font-size: 14px;">&nbsp;0%</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <span style="font-size: 14px;color:#6495ED;font-weight: 600;">1 Star&nbsp;</span>
+
+                        <div class="progress"
+                            style="width: 50%;height: 13px; background-color: #dddddd;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width: 63%;border-radius: 0px;box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);">
+                            </div>
+                        </div>
+
+                        <span style="font-size: 14px;color:#6495ED;font-weight: 600;">&nbsp;63%</span>
+                    </div>
+
+                    <br><br>
+                    <div class="row" style="font-size: 18px;font-weight: 600;">
+                        Review this Product
+                    </div>
+                    <div class="row" style="font-size: 12px;padding-bottom: 6px;">
+                        Share your thoughts with other customer
+                    </div>
+                    <div class="row">
+                        <span><button class="btn-review"><span style="font-size: 12px;">Write a Product
+                                    review</span></button></span>
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <!-- <div class="row"> -->
+                    <div class="row align-items-center">
+                        <span><img src="images/user.png" alt="user" height="60px" width="60px"></span>
+                        <span style="padding-left: 20px;">
+                            <h6 style="font-family: poppins,sans-serif;font-size: 18px;font-weight: 600;">M/s Smita
+                                Suryavanshi</h6>
+                        </span>
+
+                    </div>
+                    <div class="row align-items-center" style="padding-top: 10px;">
+                        <div class="product-caption">
+                            <div class="product-rating">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star low-star"></i>
+                                <i class="far fa-star low-star"></i>
+                                <span style="font-weight: 600;font-size: 14px;">&nbsp; Early Delivery, Very resonable
+                                    price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size:12px;padding-bottom: 5px;">
+                        Reviewed in India on 8 July 2021
+                    </div>
+                    <div class="row">
+                        <h5 style="font-family: poppins,sans-serif;font-size: 14px;font-weight: 700;color: #962D2D;">
+                            Verified Purchase</h5>
+                        <p style="font-family: poppins,sans-serif;font-size: 12px;">
+                            Manufacture year is 2018. So CEAT company rejected online registration for extended warranty
+                            But they said
+                            this tyres are eligible for normal warranty for the balance of 3 years .When I compared the
+                            price I found them
+                            reasonable.
+
+                            <p style="font-family: poppins,sans-serif;font-size: 12px;">
+                                In Short if your are looking for warranty of 5 years with unlimited extended warranty of
+                                6 months ,buy this product
+                            </p>
+                        </p>
+                    </div>
+                    <div class="row align-items-center">
+                        <button class="btn-review" style="padding-left: 20px;padding-right: 20px;"><span
+                                style="font-size: 12px;">Helpful</span></button>
+                        <span style="padding-left: 15px;padding-right: 15px;color: #ccc;">|</span><span
+                            style="font-size: 12px;">Comment</span><span
+                            style="padding-left: 15px;padding-right: 15px;color: #ccc;">|</span><span
+                            style="font-size: 12px;">Report abuse</span>
+
+                    </div>
+
+                    <!-- </div> -->
+                    <br>
+                    <!-- <div class="row"> -->
+                    <div class="row align-items-center">
+                        <span><img src="images/user.png" alt="user" height="60px" width="60px"></span>
+                        <span style="padding-left: 20px;">
+                            <h6 style="font-family: poppins,sans-serif;font-size: 18px;font-weight: 600;">M/s Smita
+                                Suryavanshi</h6>
+                        </span>
+
+                    </div>
+                    <div class="row align-items-center" style="padding-top: 10px;">
+                        <div class="product-caption">
+                            <div class="product-rating">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star low-star"></i>
+                                <i class="far fa-star low-star"></i>
+                                <span style="font-weight: 600;font-size: 14px;">&nbsp; Early Delivery, Very resonable
+                                    price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size:12px;padding-bottom: 5px;">
+                        Reviewed in India on 8 July 2021
+                    </div>
+                    <div class="row">
+                        <h5 style="font-family: poppins,sans-serif;font-size: 14px;font-weight: 700;color: #962D2D;">
+                            Verified Purchase</h5>
+                        <p style="font-family: poppins,sans-serif;font-size: 12px;">
+                            Manufacture year is 2018. So CEAT company rejected online registration for extended warranty
+                            But they said
+                            this tyres are eligible for normal warranty for the balance of 3 years .When I compared the
+                            price I found them
+                            reasonable.
+
+                            <p style="font-family: poppins,sans-serif;font-size: 12px;">
+                                In Short if your are looking for warranty of 5 years with unlimited extended warranty of
+                                6 months ,buy this product
+                            </p>
+                        </p>
+                    </div>
+                    <div class="row align-items-center">
+                        <button class="btn-review" style="padding-left: 20px;padding-right: 20px;"><span
+                                style="font-size: 12px;">Helpful</span></button>
+                        <span style="padding-left: 15px;padding-right: 15px;color: #ccc;">|</span><span
+                            style="font-size: 12px;">Comment</span><span
+                            style="padding-left: 15px;padding-right: 15px;color: #ccc;">|</span><span
+                            style="font-size: 12px;">Report abuse</span>
+
+                    </div>
+                    <div class="row" style="padding-top: 20px;">
+                        <a href="#"><u style="color: #6495ED;">see all reviews form India</u></a>
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row align-items-center">
+                <h5 style="font-family: poppins,sans-serif;padding-left: 16px;padding-bottom: 20px;">SIMILAR PRODUCTS
+                </h5>
+            </div>
+
+            <div class="row1" style="overflow-y:hidden;overflow-x: scroll;width: 1000px;white-space: nowrap;">
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product">
+                        <div class="card" style="width: 350px;">
+                            <div class="product-img">
+                                <img src="images/product2.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product">
+                        <div class="card" style="width: 350px;">
+                            <div class="product-img">
+                                <img src="images/product5.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product" style="width: 350px;">
+                        <div class="card">
+                            <div class="product-img">
+                                <img src="images/product2.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product">
+                        <div class="card" style="width: 350px;">
+                            <div class="product-img">
+                                <img src="images/product4.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product">
+                        <div class="card" style="width: 350px;">
+                            <div class="product-img">
+                                <img src="images/product6.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col1" style="display: inline-block;">
+                    <div class="single-product">
+                        <div class="card" style="width: 350px;">
+                            <div class="product-img">
+                                <img src="images/product1.png" class="card-img-top" alt="#" aria-label="Product2">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-caption">
+                                    <div class="product-rating">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                        <i class="far fa-star low-star"></i>
+                                    </div>
+                                    <h4><a href="#" aria-label="product details">Green Dress with
+                                            details</a></h4>
+                                    <div class="price">
+                                        <ul>
+                                            <li>$40.00</li>
+                                            <li class="discount">$60.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- </div> -->
+                <!-- </span> -->
+            </div>
+        </div>
+        <!-- <button onClick="hideProduct()" id="hide-button">Show More/Less</button> -->
+    </main>
+    <div class="shop-method-area" id="shop-method" aria-labelledby="shop-method" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/money.png" height="80px" width="80px"></span>
+                        <h6 class="method-header">100% SECURE PAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/shield.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">TRUSTPAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/customer-service.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">HELP CENTER</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <span style="padding-left: 80px;"><img src="images/mobile-app.png" height="80px"
+                            width="80px"></span>
+                    <div class="single-method">
+                        <h6 class="method-header">SHOP ON THE GO</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row d-flex justify-content-between" style="padding-top: 100px;">
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">POLICY INFO</span>
+                        <ul class="policy-info">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Sale</li>
+                            <li>Terms of Use</li>
+                            <li>Report Abuse & Takedown Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">COMPANY</span>
+                        <ul class="policy-info">
+                            <li>About Us</li>
+                            <li>Core Value</li>
+                            <li>Careers</li>
+                            <li>Blog</li>
+                            <li>Sitemap</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">SNAPDEAL BUSINESS</span>
+                        <ul class="policy-info">
+                            <li>Shopping App</li>
+                            <li>Sell On Snapdeal</li>
+                            <li>Advertise On Snapdeal</li>
+                            <li>Media Inquiries</li>
+                            <li>Be an Affiliate</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">NEED HELP ?</span>
+                        <ul class="policy-info">
+                            <li style="padding-right: 60px;">FAQ </li>
+                            <li>Contact Us</li>
+                            <li>Online Shopping</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="policy-header">SUBSCRIBE</div>
+                    <div style="padding-top: 30px;">
+                        <input style="color: #aaa;background-color: whitesmoke;border: none;padding: 5px;" type="email"
+                            placeholder="Your Email Address">
+                        <button
+                            style="border: none; background-color:black;color: white;padding: 5px;">Subscribe</button>
+                    </div>
+
+                    <span class="policy-info" style="padding-top: 15px;">Register now to get Updates on
+                        Promotions and coupons. Or <a href="#" style="color:#00aad2;"><u>Download
+                                App</u></a></span>
+                    <div style="float: right; padding-top: 100px;" id="scrollUp">
+                        <button onclick="topFunction()" id="myBtn" title="Top of Page" class="btnscroll">&#8963</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    </main>
+
+    <!-- Footer Start-->
+    <div class="footer-area" id="footer-area" aria-labelledby="footer-area">
+        <div class="container">
+            <div class="row" style="padding-top:40px;">
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                    <div style="font-size: 14px;font-weight: 600; padding-bottom: 10px;">PAYMENT</div>
+
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card1.png" alt="card1" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card2.png" alt="card2" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card3.png" alt="card3" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card4.png" alt="card4" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/cod.png" alt="cod" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/net.png" alt="net" height="30px"
+                                width="30px"></span> </a>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 connect" style="padding-left: 250px;">
+                    <div style="font-size: 14px;font-weight: 600;padding-bottom: 10px;">CONNECT</div>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/FACEBOOK.png" alt="facebook"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/TWITTER.png" alt="twitter"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/YOUTUBE.png" alt="youtube"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/INSTAGRAM.png" alt="instagram"
+                                height="20px" width="20px"></span> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom1.js"></script>
+</body>
+</html>

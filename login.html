@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> <!-- jQuery
+        library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> <!-- Latest
+        compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> </script> <!-- The following
+        scripts are added to make the sliding possible in carousal -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#signin').modal('show');
+        });
+    </script>
+</head>
+<body>
+ 
+      
+            <div class="modal "  role="dialog" id="signin" >
+                
+                <div class="modal-dialog modal-md" role="document">
+                  
+                    <div class="modal-content">
+                       <span style="padding-left: 150px;"> <img src="images/logo.png" height="90px"></span>
+                        <div class="modal-header" style="padding: auto;">
+                           
+        
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist" style="align-items: flex-start">
+                                    <a class="modal-nav nav-item nav-link active "
+                                        style="padding-right: 81px; padding-left: 81px;" id="nav-login1" data-toggle="tab"
+                                        href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">LOGIN</a>
+        
+                                    <a class="modal-nav nav-item nav-link" id="nav-register1"
+                                        style="padding-right: 36px; padding-left: 36px;" data-toggle="tab" href="#nav-register"
+                                        role="tab" aria-controls="nav-register" aria-selected="false">CREATE ACCOUNT</a>
+        
+        
+                                </div>
+                            </nav>
+        
+        
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><a href="index.html">&times; </a></span>
+                            </button>
+        
+        
+                        </div>
+                        <div class="modal-body">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-login" role="tabpanel"
+                                    aria-labelledby="nav-login">
+        
+                                    <form onsubmit="return index.html">
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Email<b>*</b></label>
+                                            <input type="email" class="form-control" id="recipient-email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-form-label">Password<b>*</b></label>
+                                            <input type="password" class="form-control" id="recipient-password"
+                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                          <button class="btn-modal"
+                                                style="padding-right: 200px; padding-left: 205px; padding-top: 5px; padding-bottom: 5px;"><a href="index.html">SIGN
+                                                    IN</a></button>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn-forgot">FORGOT YOUR PASSWORD?</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register">
+                                    <form action="#directory" onsubmit="return indexNoJS.html">
+                                        <div class="form-group">
+                                            <label for="text" class="col-form-label">Username<b>*</b></label>
+                                            <input type="text" class="form-control" id="text" name="text" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Email:</label>
+                                            <input type="email" class="form-control" id="recipient-email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-form-label">Password<b>*</b></label>
+                                            <input type="password" class="form-control" id="recipient-password"
+                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                           <button class="btn-modal"
+                                                style="padding-bottom: 5px;padding-top: 5px; padding-left: 158px;padding-right: 158px;">CREATE
+                                                ACCOUNT</button>
+                                        </div>
+                                    </form>
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                        <div class="modal-footer">
+                            <form>
+                                <div class="form-group">
+                                    <h6 style="font-family: Arial; text-align: center;"><b>or Login with</b></h6>
+                                </div>
+                                <div class="form-footer">
+                                    <a class="btn-primary" style="background-color: #3b5998;" href="#!" role="button"><i
+                                            class="fab fa-facebook-f" style="font-size: 16px;"><b style="font-size: 18px;">
+                                                Facebook</b></i></a>
+                                    <a class="btn-primary" style="background-color: #55acee;" href="#!" role="button"><i
+                                            class="fab fa-twitter"><b style="font-size: 18px;"> Twitter</b></i></a>
+        
+                                    <a class="btn-primary" style="background-color: #dd4b39;" href="#!" role="button"><i
+                                            class="fab fa-google"><b style="font-size: 18px;"> Google</b></i></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-list</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+     <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script>
+     <!-- Latest
+        compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> </script> 
+    <!-- The following
+        scripts are added to make the sliding possible in carousal -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> 
+     </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</head>
+
+<body id="product-list">
+    <header style="top: 0px; background-color: white;">
+        <div class="header" id="myHeader">
+            <div class="header-top">
+                <div class="container-fluid top-bg" id="header-1" aria-labelledby="header-1">
+                    <div class="row d-flex justify-content-between align-items-center "
+                        style="padding-top: 5px;padding-bottom: 5px;">
+                        <div class="header-info-left d-flex">
+                            <span class="social-logo">
+                                <a href="#"><img src="images/facebook-logo.png" alt="facebook logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo">
+                                <a href="#"><img src="images/youtube-logotype.png" alt="youtube logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo" style="padding-right: 80px;">
+                                <a href="#"><img src="images/twitter-social-logotype.png" alt="twitter logo"
+                                        height="30px" width="30px"></a>
+                            </span>
+
+                            <span class="input">
+                                <input type="text" class="search" placeholder="Search Products & Brands">
+
+                                <button class="btn-search" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+
+                        </div>
+                        <div class="header-info-right">
+                            <!-- start of hamburger the list collapses when opend in small devices -->
+                            <!-- nav tab is used to create the hamburger structure and nav-item and collapse class is used -->
+                            <ul style="padding-right: 10px;">
+                                <li>
+                                    <img src="images/phone-with-wire.png" alt="phone" height="30px" width="30px">
+                                    <a href="#" aria-label="contact info"><span id="phone-no">+91 8861873442</span></a>
+                                </li>
+                                <li class="nav-item" aria-details="account">
+                                    <a class="nav-link" href="#" role="link">Sell on Company</a>
+                                </li>
+                                <li class="nav-item" aria-details="wishlist">
+                                    <a class="nav-link" href="#" role="link">Download App</a>
+
+                                </li>
+                                <li>
+                                    <form action="#" style="padding-left: 20px;" role="presentation">
+                                        <img id="country-logo" src="images/india.png" alt="flag" height="25px"
+                                            width="25px">
+                                        <select name="select" id="select1" onchange=showChange()>
+                                            <option value="INDIA">INDIA</option>
+                                            <option value="USA">USA</option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="CANADA">CAN</option>
+                                        </select>
+                                    </form>
+                                </li>
+                            </ul>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="header-bottom" id="header-sticky" aria-labelledby="header-2"
+                style="background-color: white;">
+
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1" id="logo">
+                            <a href="index.html" aria-label="Logo of Website"><img src="images/logo.png"
+                                    alt="logo"></a>
+                        </div>
+                        <div class="col-xl-6 col-lg-8 col-md-7  col-sm-3">
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav role="menubar">
+                                    <ul id="navigation">
+                                        <!-- <div class="dropdown">
+                                            <li class="dropbtn">Dropdown</li>
+                                            <div class="dropdown-content">
+                                              <a href="#">Link 1</a>
+                                              <a href="#">Link 2</a>
+                                              <a href="#">Link 3</a>
+                                            </div>
+                                          </div> -->
+                                        <li role="menuitem"><a href="index.html">Home</a></li>
+                                        
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            <li role="menuitem" class="dropdown dropbtn">Categories</li>
+                                                <div class="dropdown-content">
+                                                    <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                    <a href="">Men</a>
+                                                    <a href="">Women</a>
+                                                    <a href="">Children</a>
+                                                    <a href="">Ethnic</a>
+                                                    <a href="">Winter</a>
+                                                </div>
+                                            
+                                        </div>
+                                   
+                                       
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            
+                                        
+                                        <li role="menuitem" class=" dropbtn">Latest</li>
+                                            <div class="dropdown-content">
+                                                <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                <a href="Product-list.html">Product List</a>
+                                                <a href="ProductView.html">Product details</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <li role="menuitem"><a href="FAQ.html">FAQ</a></li>
+                                        <!-- <li role="menuitem"><a href="Profile.html">Profile</a> -->
+                                        </li>
+                                        <li role="menuitem"><a href="">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-12" id="logo-left">
+                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                <div class="dropdown">
+                                    <li class="dropbtn"><img src="images/user (1).png" height="45px" width="50px"></li>
+                                   
+                                    <div class="dropdown-content">
+                                        <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                        <a href="Profile.html">Profile</a>
+                                      <a href="My-order.html">My Orders</a>
+                                      <a href="track-order.html">Track Orders</a>
+                                      <a href="ReturnOrder.html">Returns</a>
+
+                                      <a href="Edit-profile.html">Edit-profile</a>
+                                      <a href="thankyou.html">LogOut</a>
+
+                                    </div>
+                                  </div>
+
+                                <li><a href="WishList.html"><i class="far fa-heart"></i></a></li>
+                                <li><a href="Cart-Page.html"><i class="fas fa-shopping-cart"></i></a></i></li>
+                                <!-- contrast color -->
+                                <li><a href="login.html"><button class="btn header-btn" data-toggle="modal" data-target="#signin"
+                                        aria-label="Sign In" style="color: #552A1B;">Sign in</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+
+    </header>
+    <main>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><b>Product List</b></li>
+
+            </ol>
+        </nav>
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3" style="float: left;">
+                    <div class="row">
+                        <b style="font-size: 18px;padding-bottom: 20px;">FILTERS</b>
+                    </div>
+                    <div id="notdrop">
+
+                        <div class="row">
+                            <b style="padding-bottom: 5px;">CATEGORIES</b>
+                        </div>
+                        <div class="row" style="padding-left: 16px;padding-bottom: 10px;">
+
+                            <ul class="filter">
+
+                                <div class="row ">
+                                    <li>
+                                        <label class="check">kurtas (23459)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">kurta Sets (9071)
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+
+
+
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <b style="padding-bottom: 5px;">BRAND</b>
+                        </div>
+                        <div class="row" style="padding-left: 16px;padding-bottom: 10px;">
+                            <ul class="filter">
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Anouk (3300)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Sangria (450)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">w (2200)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Biba (800)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Libas (900)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Levis (800)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Peter (160)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Soch (140)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Lehanga (300)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <label class="check">Allen (200)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </li>
+                                </div>
+
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <b style="padding-bottom: 5px;">PRICE</b>
+                        </div>
+                        <div class="row" style="padding-left: 16px;padding-bottom: 10px;">
+                            <UL class="filter">
+                                <div class="row">
+                                    <Li>
+                                        <label class="check">Rs. 239 to Rs. 15805 (9020)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </Li>
+                                </div>
+                                <div class="row">
+                                    <Li>
+                                        <label class="check">Rs. 15805 to Rs. 31372 (26)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </Li>
+                                </div>
+                                <div class="row">
+                                    <Li>
+                                        <label class="check">Rs. 31372 to Rs. 46937 (13)
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </Li>
+                                </div>
+
+                            </UL>
+                        </div>
+                        <div class="row">
+                            <b style="padding-bottom: 5px;">DISCOUNT RANGE</b>
+                        </div>
+                        <div class="row" style="padding-left: 16px;padding-bottom: 10px;">
+                            <ul class="filter" id="group">
+                                <div class="row">
+                                    <li>
+
+
+                                        <input type="radio" checked name="group" value="radio1">
+                                        <label class="radio-label">Anouk (3300)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio2">
+                                        <label class="radio-label">Sangria (450)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio3">
+                                        <label class="radio-label">W (2200)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio4">
+                                        <label class="radio-label">Biba (800)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio5">
+                                        <label class="radio-label">Libas (900)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio6">
+                                        <label class="radio-label">Levis (800)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio7">
+                                        <label class="radio-label">Peter (160)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio8">
+                                        <label class="radio-label">Soch (140)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" checked name="group" value="radio9">
+                                        <label class="radio-label">Lehnaga (300)</label>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li>
+                                        <input type="radio" name="group" value="radio10">
+                                        <label class="radio-label">Allen (200)</label>
+                                    </li>
+                                </div>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="container" id="dropdown">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="anim">
+                                        <span class="header1">CATEGORIES
+                                        </span><button id="anime">+</button></h4>
+
+                                        <div class="row anim1" style="padding-left: 16px;padding-bottom: 10px;">
+
+                                            <ul class="filter">
+
+                                                <div class="row ">
+                                                    <li>
+                                                        <label class="check">kurtas (23459)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">kurta Sets (9071)
+                                                            <input type="checkbox" checked="checked">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+
+
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="anim">
+                                        <span class="header1"> BRAND</span><button id="anime">+</button></h4>
+
+                                        <div class="row anim1" style="padding-left: 16px;padding-bottom: 10px;">
+                                            <ul class="filter">
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Anouk (3300)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Sangria (450)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">w (2200)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Biba (800)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Libas (900)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Levis (800)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Peter (160)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Soch (140)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Lehanga (300)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <label class="check">Allen (200)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </li>
+                                                </div>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="anim">
+                                        <span class="header1">PRICE</span><button id="anime">+</button>
+                                        <div class="row anim1" style="padding-left: 16px;padding-bottom: 10px;">
+                                            <UL class="filter">
+                                                <div class="row">
+                                                    <Li>
+                                                        <label class="check">Rs. 239 to Rs. 15805 (9020)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </Li>
+                                                </div>
+                                                <div class="row">
+                                                    <Li>
+                                                        <label class="check">Rs. 15805 to Rs. 31372 (26)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </Li>
+                                                </div>
+                                                <div class="row">
+                                                    <Li>
+                                                        <label class="check">Rs. 31372 to Rs. 46937 (13)
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </Li>
+                                                </div>
+
+                                            </UL>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="anim">
+                                        <span class="header1">DISCOUNT RANGE</span><button id="anime">+</button>
+                                        <div class="row anim1" style="padding-left: 16px;padding-bottom: 10px;">
+                                            <ul class="filter" id="group">
+                                                <div class="row">
+                                                    <li>
+
+
+                                                        <input type="radio" checked name="group" value="radio1">
+                                                        <label class="radio-label">Anouk (3300)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio2">
+                                                        <label class="radio-label">Sangria (450)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio3">
+                                                        <label class="radio-label">W (2200)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio4">
+                                                        <label class="radio-label">Biba (800)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio5">
+                                                        <label class="radio-label">Libas (900)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio6">
+                                                        <label class="radio-label">Levis (800)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio7">
+                                                        <label class="radio-label">Peter (160)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio8">
+                                                        <label class="radio-label">Soch (140)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio" name="group" value="radio9">
+                                                        <label class="radio-label">Lehnaga (300)</label>
+                                                    </li>
+                                                </div>
+                                                <div class="row">
+                                                    <li>
+                                                        <input type="radio " checked name="group" value="radio10">
+                                                        <label class="radio-label">Allen (200)</label>
+                                                    </li>
+                                                </div>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                    <!-- <div class="container"> -->
+                    <div class="row" style="padding-bottom: 30px;">
+
+
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 return1">
+                            <span style=" font-size: 22px;font-weight: 500;">
+                                Products
+                            </span>
+                            <span style="font-size: 14px;color: #282c3f;">(18 itmes)</span>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 return2">
+
+                            <form action="#" role="presentation" style="float: right; padding-top: 10px;">
+                                <span style="color:#282c3f;">SORT BY: </span>
+                                <select name="sort" class="sort1">
+                                    <option value="1"><b>What's New</b></option>
+                                    <option value="3">Best Discount</option>
+                                    <option value="4">Price : High To Low</option>
+                                    <option value="2">Popularity</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row" id="productsListArea">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Shop Method Start-->
+    <div class="shop-method-area" id="shop-method" aria-labelledby="shop-method" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/money.png" height="80px" width="80px"></span>
+                        <h6 class="method-header">100% SECURE PAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/shield.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">TRUSTPAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/customer-service.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">HELP CENTER</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <span style="padding-left: 80px;"><img src="images/mobile-app.png" height="80px"
+                            width="80px"></span>
+                    <div class="single-method">
+                        <h6 class="method-header">SHOP ON THE GO</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row d-flex justify-content-between" style="padding-top: 100px;">
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">POLICY INFO</span>
+                        <ul class="policy-info">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Sale</li>
+                            <li>Terms of Use</li>
+                            <li>Report Abuse & Takedown Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">COMPANY</span>
+                        <ul class="policy-info">
+                            <li>About Us</li>
+                            <li>Core Value</li>
+                            <li>Careers</li>
+                            <li>Blog</li>
+                            <li>Sitemap</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">SNAPDEAL BUSINESS</span>
+                        <ul class="policy-info">
+                            <li>Shopping App</li>
+                            <li>Sell On Snapdeal</li>
+                            <li>Advertise On Snapdeal</li>
+                            <li>Media Inquiries</li>
+                            <li>Be an Affiliate</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">NEED HELP ?</span>
+                        <ul class="policy-info">
+                            <li style="padding-right: 60px;">FAQ </li>
+                            <li>Contact Us</li>
+                            <li>Online Shopping</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="policy-header">SUBSCRIBE</div>
+                    <div style="padding-top: 30px;">
+                        <input style="color: #aaa;background-color: whitesmoke;border: none;padding: 5px;" type="email"
+                            placeholder="Your Email Address">
+                        <button
+                            style="border: none; background-color:black;color: white;padding: 5px;">Subscribe</button>
+                    </div>
+
+                    <span class="policy-info" style="padding-top: 15px;">Register now to get Updates on
+                        Promotions and coupons. Or <a href="#" style="color:#00aad2;"><u>Download
+                                App</u></a></span>
+                    <div style="float: right; padding-top: 100px;" id="scrollUp">
+                        <button onclick="topFunction()" id="myBtn" title="Top of Page" class="btnscroll">&#8963</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    </main>
+
+    <!-- Footer Start-->
+    <div class="footer-area" id="footer-area" aria-labelledby="footer-area">
+        <div class="container">
+            <div class="row" style="padding-top:40px;">
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                    <div style="font-size: 14px;font-weight: 600; padding-bottom: 10px;">PAYMENT</div>
+
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card1.png" alt="card1" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card2.png" alt="card2" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card3.png" alt="card3" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card4.png" alt="card4" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/cod.png" alt="cod" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/net.png" alt="net" height="30px"
+                                width="30px"></span> </a>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 connect" style="padding-left: 250px;">
+                    <div style="font-size: 14px;font-weight: 600;padding-bottom: 10px;">CONNECT</div>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/FACEBOOK.png" alt="facebook"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/TWITTER.png" alt="twitter"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/YOUTUBE.png" alt="youtube"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/INSTAGRAM.png" alt="instagram"
+                                height="20px" width="20px"></span> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom1.js"></script>
+   
+
+    
+</body>
+
+</html>

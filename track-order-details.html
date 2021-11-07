@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> <!-- Latest
+        compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> </script> <!-- The following
+        scripts are added to make the sliding possible in carousal -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <style>
+        .one,
+        .two,
+        .three,
+        .four {
+            position: absolute;
+            margin-top: -15px;
+            z-index: 1;
+            height: 40px;
+            width: 40px;
+            border-radius: 25px;
+
+        }
+
+        #polygon {
+            position: absolute;
+            margin-top: -19px;
+            z-index: 1;
+            left: 67%;
+            /* height:40px;
+	width:40px; */
+            /* border-radius:25px; */
+        }
+
+
+        .one {
+            left: 0%;
+        }
+
+        .two {
+            left: 33%;
+        }
+
+        .three {
+            left: 66%;
+        }
+
+        .four {
+            left: 95%;
+            background-color: inherit;
+        }
+
+        .primary-color {
+            background-color: #4989bd;
+        }
+
+        .success-color {
+            background-color: #5cb85c;
+        }
+
+        .danger-color {
+            background-color: #d9534f;
+        }
+
+        .warning-color {
+            background-color: #f0ad4e;
+        }
+
+        .info-color {
+            background-color: #5bc0de;
+        }
+
+        .no-color {
+            background-color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="top: 0px; background-color: white;">
+        <div class="header" id="myHeader">
+            <div class="header-top">
+                <div class="container-fluid top-bg" id="header-1" aria-labelledby="header-1">
+                    <div class="row d-flex justify-content-between align-items-center "
+                        style="padding-top: 5px;padding-bottom: 5px;">
+                        <div class="header-info-left d-flex">
+                            <span class="social-logo">
+                                <a href="#"><img src="images/facebook-logo.png" alt="facebook logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo">
+                                <a href="#"><img src="images/youtube-logotype.png" alt="youtube logo" height="30px"
+                                        width="30px" style="border-radius: 100%;"></a>
+                            </span>
+                            <span class="social-logo" style="padding-right: 80px;">
+                                <a href="#"><img src="images/twitter-social-logotype.png" alt="twitter logo"
+                                        height="30px" width="30px"></a>
+                            </span>
+
+                            <span class="input">
+                                <input type="text" class="search" placeholder="Search Products & Brands">
+
+                                <button class="btn-search" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+
+                        </div>
+                        <div class="header-info-right">
+                            <!-- start of hamburger the list collapses when opend in small devices -->
+                            <!-- nav tab is used to create the hamburger structure and nav-item and collapse class is used -->
+                            <ul style="padding-right: 10px;">
+                                <li>
+                                    <img src="images/phone-with-wire.png" alt="phone" height="30px" width="30px">
+                                    <a href="#" aria-label="contact info"><span id="phone-no">+91 8861873442</span></a>
+                                </li>
+                                <li class="nav-item" aria-details="account">
+                                    <a class="nav-link" href="#" role="link">Sell on Company</a>
+                                </li>
+                                <li class="nav-item" aria-details="wishlist">
+                                    <a class="nav-link" href="#" role="link">Download App</a>
+
+                                </li>
+                                <li>
+                                    <form action="#" style="padding-left: 20px;" role="presentation">
+                                        <img id="country-logo" src="images/india.png" alt="flag" height="25px"
+                                            width="25px">
+                                        <select name="select" id="select1" onchange=showChange()>
+                                            <option value="INDIA">INDIA</option>
+                                            <option value="USA">USA</option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="CANADA">CAN</option>
+                                        </select>
+                                    </form>
+                                </li>
+                            </ul>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="header-bottom" id="header-sticky" aria-labelledby="header-2"
+                style="background-color: white;">
+
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1" id="logo">
+                            <a href="index.html" aria-label="Logo of Website"><img src="images/logo.png"
+                                    alt="logo"></a>
+                        </div>
+                        <div class="col-xl-6 col-lg-8 col-md-7  col-sm-3">
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav role="menubar">
+                                    <ul id="navigation">
+                                        <!-- <div class="dropdown">
+                                            <li class="dropbtn">Dropdown</li>
+                                            <div class="dropdown-content">
+                                              <a href="#">Link 1</a>
+                                              <a href="#">Link 2</a>
+                                              <a href="#">Link 3</a>
+                                            </div>
+                                          </div> -->
+                                        <li role="menuitem"><a href="index.html">Home</a></li>
+                                        
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            <li role="menuitem" class="dropdown dropbtn">Categories</li>
+                                                <div class="dropdown-content">
+                                                    <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                    <a href="">Men</a>
+                                                    <a href="">Women</a>
+                                                    <a href="">Children</a>
+                                                    <a href="">Ethnic</a>
+                                                    <a href="">Winter</a>
+                                                </div>
+                                            
+                                        </div>
+                                   
+                                       
+                                        <div class="dropdown" style="margin-right: 10px;">
+                                            
+                                        
+                                        <li role="menuitem" class=" dropbtn">Latest</li>
+                                            <div class="dropdown-content">
+                                                <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                                <a href="Product-list.html">Product List</a>
+                                                <a href="ProductView.html">Product details</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <li role="menuitem"><a href="FAQ.html">FAQ</a></li>
+                                        <!-- <li role="menuitem"><a href="Profile.html">Profile</a> -->
+                                        </li>
+                                        <li role="menuitem"><a href="">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-12" id="logo-left">
+                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                <div class="dropdown">
+                                    <li class="dropbtn"><img src="images/user (1).png" height="45px" width="50px"></li>
+                                   
+                                    <div class="dropdown-content">
+                                        <li><img src="images/Path 12348.png" height="5px" width="100%"></li>
+                                        <a href="Profile.html">Profile</a>
+                                      <a href="My-order.html">My Orders</a>
+                                      <a href="track-order.html">Track Orders</a>
+                                      <a href="ReturnOrder.html">Returns</a>
+
+                                      <a href="Edit-profile.html">Edit-profile</a>
+                                      <a href="thankyou.html">LogOut</a>
+
+                                    </div>
+                                  </div>
+
+                                <li><a href="WishList.html"><i class="far fa-heart"></i></a></li>
+                                <li><a href="Cart-Page.html"><i class="fas fa-shopping-cart"></i></a></i></li>
+                                <!-- contrast color -->
+                                <li><a href="login.html"><button class="btn header-btn" data-toggle="modal" data-target="#signin"
+                                        aria-label="Sign In" style="color: #552A1B;">Sign in</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+
+    </header>
+    <main>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><b>Wish List</b></li>
+
+            </ol>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12">
+                    <nav class="navbar1 navbar-expand-lg navbar-collapse-sm navbar-light navbar-fixed-top">
+                        <a class="navbar-brand" href="#" role="link"></a>
+                        <button style="text-align: end;" class="navbar-toggler " type="button" data-toggle="collapse"
+                            data-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"> </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText1">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical" style="border: none; height: 800px;">
+
+                                <b>MY ACCOUNT</b>
+                                <img src="images/add-friend.png" height="60px" width="60px"
+                                    style="border-radius: 100%;border-color: #a6a9b6;" alt="profile pic">
+                                <span>Smita S</span>
+                                <span>SmitaS@gmail.com</span>
+                                <br>
+                                <b>ORDERS</b>
+                                <a class="nav-link " id="v-pills-order-tab" data-toggle="pill" href="#v-pills-order"
+                                    role="tab" aria-controls="v-pills-order" aria-selected="true">My Order</a>
+                                <a class="nav-link active" id="v-pills-track-tab" data-toggle="pill"
+                                    href="#v-pills-track" role="tab" aria-controls="v-pills-track"
+                                    aria-selected="false">Track Order</a>
+                                <a class="nav-link " id="v-pills-return-tab" data-toggle="pill" href="#v-pills-return"
+                                    role="tab" aria-controls="v-pills-return" aria-selected="false">Returns Order</a>
+                                <a class="nav-link" id="v-pills-cancel-tab" data-toggle="pill" href="#v-pills-cancel"
+                                    role="tab" aria-controls="v-pills-cancel" aria-selected="false">Cancelled Order</a>
+                                <br>
+                                <b>ACCOUNT</b>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                                    role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                                <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address"
+                                    role="tab" aria-controls="v-pills-address" aria-selected="false">Saved Addresses</a>
+                                <a class="nav-link" id="v-pills-card-tab" data-toggle="pill" href="#v-pills-card"
+                                    role="tab" aria-controls="v-pills-card" aria-selected="false">Saved Cards</a>
+                                <a class="nav-link" id="v-pills-password-tab" data-toggle="pill"
+                                    href="#v-pills-password" role="tab" aria-controls="v-pills-password"
+                                    aria-selected="false">Change Password</a>
+                                <a class="nav-link " id="v-pills-wishlist-tab" data-toggle="pill"
+                                    href="#v-pills-wishlist" role="tab" aria-controls="v-pills-wishlist"
+                                    aria-selected="false">Wishlist</a>
+                                <br>
+                                <b>PAYMENT</b>
+                                <a class="nav-link" id="v-pills-phonepe-tab" data-toggle="pill" href="#v-pills-phonepe"
+                                    role="tab" aria-controls="v-pills-phonepe" aria-selected="false">Phonepe</a>
+                                <a class="nav-link" id="v-pills-gift-tab" data-toggle="pill" href="#v-pills-gift"
+                                    role="tab" aria-controls="v-pills-gift" aria-selected="false">Gift Card</a>
+                                <a class="nav-link" id="v-pills-debit-tab" data-toggle="pill" href="#v-pills-debit"
+                                    role="tab" aria-controls="v-pills-debit" aria-selected="false">Debit Card</a>
+                                <a class="nav-link" id="v-pills-credit-tab" data-toggle="pill" href="#v-pills-credit"
+                                    role="tab" aria-controls="v-pills-credit" aria-selected="false">Credit Card</a>
+                            </div>
+                        </div>
+                </div>
+                </nav>
+
+                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+
+
+                    <!-- <div class="row"> -->
+
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 return1">
+                            <span style="color: #f8880f; font-size: 20px;font-weight: 800;padding-top: 20px;">TRACK
+                                ORDER DETAILS</span>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 return2">
+
+                            <form action="#" role="presentation" style="float: right; padding-top: 10px;">
+                                <span style="color:#282c3f;">SORT BY: </span>
+                                <select name="sort" class="sort1">
+                                    <option value="1"><b>What's New</b></option>
+                                    <option value="3">Best Discount</option>
+                                    <option value="4">Price : High To Low</option>
+                                    <option value="2">Popularity</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <hr><br>
+
+                    <div class="tab-content" style="border: 0px;" id="v-pills-tabContent">
+
+                        <div class="tab-pane fade show active" id="v-pills-track" role="tabpanel"
+                            aria-labelledby="v-pills-track-tab">
+                            <div class="container-fluid">
+                                <div class="row width=100%" id="trackorder">
+                                    <div class="container">
+                                        <div class="row"><span style="font-weight: 600; padding-bottom: 20px;">Order No
+                                                :
+                                                ABCDEFGHIJ12345678910</span></div>
+                                        <div class="row" id="track-order-details">
+                                            
+                                        </div>
+                                        <div class="row" style="padding-top: 25px;">
+                                            <div class="container-fluid">
+                                                <div class="row" style="padding-bottom: 20px;">
+                                                    <div class="col-3 "
+                                                        style="color: #5cb85c;font-weight: 600;padding-right: 70px;">
+                                                        Ordered</div>
+                                                    <div class="col-3" style="color: #5cb85c;font-weight: 600;float: right;padding-left: 70px;">Packed</div>
+                                                    <div class="col-3" style="color: #5cb85c;font-weight: 600;float: right;padding-left: 150px;">Shipped</div>
+                                                    <div class="col-3" style="color: #ccc;font-weight: 600;float: right;padding-left: 170px;">Delivered</div>
+                                                </div>
+
+                                                <div class="progress" style="height: 10px;">
+                                                    <div class="one success-color"></div>
+                                                    <div class="two success-color"></div>
+                                                    <div class="three success-color"></div>
+                                                    <div class="four success"></div>
+                                                    <div class="progress-bar progress-bar-success"
+                                                        style="width: 70% ;background-color: #5cb85c;"></div>
+                                                </div>
+                                                <br><br>
+                                                <div class="progress" style="height: 1px;">
+                                                    <div> <img id="polygon" src="images/Polygon 5.png" height="20px"
+                                                            width="20px"></div>
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: 70%; background-color: #a6a9b6;"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row" style="padding-top: 20px;">
+                                            <span style="font-weight: 600;">Shipment yet to be delivered. Ecart
+                                                Logistics - FPMC0086543690s</span>
+                                        </div>
+                                        <!-- <div class="row"> -->
+                                        <div class="row" style="padding-top: 10px;">
+                                            <div class="col-3">Tue, 21st Jul</div>
+                                            <div class="col-3">8:15 am</div>
+                                            <div class="col-2">New Delhi</div>
+                                            <div class="col-4">
+
+                                                <p>Order has been dispatched
+                                                    from flipcart facility</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-top: 10px;">
+                                            <div class="col-3">Tue, 21st Jul</div>
+                                            <div class="col-3">7:15 am</div>
+                                            <div class="col-2">New Delhi</div>
+                                            <div class="col-4">
+
+                                                <p>Order has been dispatched
+                                                    from flipcart facility</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-top: 10px;">
+                                            <div class="col-3">Tue, 19st Jul</div>
+                                            <div class="col-3">7:15 am</div>
+                                            <div class="col-2">Chennai</div>
+                                            <div class="col-4">
+
+                                                <p>Order has been dispatched
+                                                    from flipcart facility</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <a href="#" id="more" style="color: blue;text-decoration: underline;">more
+                                                details</a>
+                                        </div>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Shop Method Start-->
+    <div class="shop-method-area" id="shop-method" aria-labelledby="shop-method" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/money.png" height="80px" width="80px"></span>
+                        <h6 class="method-header">100% SECURE PAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/shield.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">TRUSTPAY</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method">
+                        <span style="padding-left: 80px;"><img src="images/customer-service.png" height="80px"
+                                width="80px"></span>
+                        <h6 class="method-header">HELP CENTER</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <span style="padding-left: 80px;"><img src="images/mobile-app.png" height="80px"
+                            width="80px"></span>
+                    <div class="single-method">
+                        <h6 class="method-header">SHOP ON THE GO</h6>
+                        <p class="method-description">aorem ixpsacdolor sit ameasecur adipisicing .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row d-flex justify-content-between" style="padding-top: 100px;">
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">POLICY INFO</span>
+                        <ul class="policy-info">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Sale</li>
+                            <li>Terms of Use</li>
+                            <li>Report Abuse & Takedown Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-1 col-lg-1 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">COMPANY</span>
+                        <ul class="policy-info">
+                            <li>About Us</li>
+                            <li>Core Value</li>
+                            <li>Careers</li>
+                            <li>Blog</li>
+                            <li>Sitemap</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">SNAPDEAL BUSINESS</span>
+                        <ul class="policy-info">
+                            <li>Shopping App</li>
+                            <li>Sell On Snapdeal</li>
+                            <li>Advertise On Snapdeal</li>
+                            <li>Media Inquiries</li>
+                            <li>Be an Affiliate</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6">
+                    <div class="single-method">
+                        <span class="policy-header">NEED HELP ?</span>
+                        <ul class="policy-info">
+                            <li style="padding-right: 60px;">FAQ </li>
+                            <li>Contact Us</li>
+                            <li>Online Shopping</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="policy-header">SUBSCRIBE</div>
+                    <div style="padding-top: 30px;">
+                        <input style="color: #aaa;background-color: whitesmoke;border: none;padding: 5px;" type="email"
+                            placeholder="Your Email Address">
+                        <button
+                            style="border: none; background-color:black;color: white;padding: 5px;">Subscribe</button>
+                    </div>
+
+                    <span class="policy-info" style="padding-top: 15px;">Register now to get Updates on
+                        Promotions and coupons. Or <a href="#" style="color:#00aad2;"><u>Download
+                                App</u></a></span>
+                    <div style="float: right; padding-top: 100px;" id="scrollUp">
+                        <button onclick="topFunction()" id="myBtn" title="Top of Page" class="btnscroll">&#8963</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer Start-->
+    <div class="footer-area" id="footer-area" aria-labelledby="footer-area">
+        <div class="container">
+            <div class="row" style="padding-top:40px;">
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                    <div style="font-size: 14px;font-weight: 600; padding-bottom: 10px;">PAYMENT</div>
+
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card1.png" alt="card1" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card2.png" alt="card2" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card3.png" alt="card3" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/card4.png" alt="card4" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/cod.png" alt="cod" height="30px"
+                                width="30px"></span> </a>
+                    <a href="#"><span style="padding-right: 15px;"><img src="images/net.png" alt="net" height="30px"
+                                width="30px"></span> </a>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 connect" style="padding-left: 250px;">
+                    <div style="font-size: 14px;font-weight: 600;padding-bottom: 10px;">CONNECT</div>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/FACEBOOK.png" alt="facebook"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/TWITTER.png" alt="twitter"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/YOUTUBE.png" alt="youtube"
+                                height="20px" width="20px"></span> </a>
+                    <a href="#"> <span style="padding-right: 15px;"><img src="images/INSTAGRAM.png" alt="instagram"
+                                height="20px" width="20px"></span> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom1.js"></script>
+
+
+</body>
+
+</html>
